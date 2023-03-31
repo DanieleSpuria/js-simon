@@ -83,14 +83,19 @@ function verify() {
         numberVerify.push(numberUser[i]);
       }
     }
+    end();
   }
 }
 
-// box.classList.add('d-none');
-// repeat.classList.remove('d-none');
-// const message = `Hai indovinato ${numberVerify.length} numeri!`;
-// output.innerHTML = message;
-// output.innerHTML += numberUser[i] + ', '; 
+function end() {
+  box.classList.add('d-none');
+  repeat.classList.remove('d-none'); 
+  const message = `
+  Hai indovinato ${numberVerify.length} numeri! <br>
+  ${numberVerify}
+  `;
+  output.innerHTML = message;
+}
 
 
 

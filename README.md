@@ -18,3 +18,4 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 - vengono verificati e stampati fuori quelli corretti;
 - bottone start genera i numeri e il countdown;
 - bottone repeat permette di ripetere il gioco una volta finito;
+- end restituisce risultato;
