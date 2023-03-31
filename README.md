@@ -20,3 +20,4 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 - bottone repeat permette di ripetere il gioco una volta finito;
 - end restituisce risultato;
 - reset per pulire il repeat;
+- insertNumber controlla che non sia stato ridigitato lo stesso numero;

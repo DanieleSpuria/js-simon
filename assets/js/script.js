@@ -25,6 +25,7 @@ let numberRandom = [];
 let numberUser = [];
 let numberVerify = [];
 let time = 5; 
+let message;
 
 start.addEventListener('click', play);
 invia.addEventListener('click', insertNumber);
@@ -74,7 +75,13 @@ function noView() {
 }
 
 function insertNumber() {
-  numberUser.push(parseInt(input.value));
+  output.innerHTML = '';
+    if (!numberUser.includes(parseInt(input.value))) {
+    numberUser.push(parseInt(input.value));
+  } else {
+    message = 'Numero già digitato!'
+    output.innerHTML = message;
+  }
   input.value = '';
   verify(); 
 }
@@ -82,9 +89,9 @@ function insertNumber() {
 function verify() {
   if (numberUser.length === 5) {
     for (let i = 0; i < 5; i++) {
-      if (numberRandom.includes(numberUser[i])) {
+        if (numberRandom.includes(numberUser[i])) {
         numberVerify.push(numberUser[i]);
-      }
+      } 
     }
     console.log('verify',numberVerify, 'length', numberVerify.length);//<-------------------------------------------
     end();
@@ -93,23 +100,28 @@ function verify() {
 
 function end() {
   box.classList.add('d-none');
-  repeat.classList.remove('d-none'); 
-  let message; 
-    if (numberVerify.length === 5) {
-    message = `
-    Ottimo! Hai ricordato tutti i ${numberVerify.length} numeri! <br>
-    ${numberVerify}
-    `;
-  } else if (numberVerify.length === 0) {
-    message = `
-    Non hai ricordato neanche un numero! <br>
-    Meglio l'ippica!
-    `;
-  } else {
-    message = `
-    Hai ricordato ${numberVerify.length} numeri! <br>
-    ${numberVerify}
-    `;
+  repeat.classList.remove('d-none');  
+  switch (numberVerify.length) {
+    case 5:
+      message = `
+      Ottimo! Hai ricordato tutti i ${numberVerify.length} numeri! <br>
+      ${numberVerify}
+      `;
+      break;
+  
+    case 0:
+      message = `
+      Non hai ricordato neanche un numero! <br>
+      Meglio l'ippica!
+      `;
+      break;
+  
+    default:
+      message = `
+      Hai ricordato ${numberVerify.length} numeri! <br>
+      ${numberVerify}
+      `;
+      break;
   }
   output.innerHTML = message;
 }
