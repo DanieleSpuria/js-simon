@@ -9,8 +9,11 @@
 
 
 //******************************************************************** Html ***  
+const start = document.getElementById('start');
+const box = document.getElementsByClassName('box')[0];
+      box.className = 'd-none';
 const input = document.querySelector('input');
-const btn = document.querySelector('button');
+const invia = document.getElementById('invia');
 const output = document.querySelector('h1');
 
 
@@ -20,15 +23,20 @@ let numberRandom = [];
 let numberUser = [];
 let time = 5;
 
-random(1,100);
-view();
-btn.addEventListener('click', insertNumber);
+start.addEventListener('click', play);
+invia.addEventListener('click', insertNumber);
 
 
 
 
 
 //**************************************************************** Funzioni ***
+function play() {
+  start.classList.add('d-none');
+  box.classList.remove('d-none');
+  view();
+}
+
 function random(min, max) {
   let i = 0;
   while ( i < 5) {
@@ -42,6 +50,7 @@ function random(min, max) {
 }
 
 function view() {
+  random(1,100);
   output.innerHTML = numberRandom;
   console.log(time);
   noView();
@@ -60,8 +69,8 @@ function noView() {
 }
 
 function insertNumber() {
-    numberUser.push(parseInt(input.value));
-    verify(); 
+  numberUser.push(parseInt(input.value));
+  verify(); 
 }
 
 function verify() {

@@ -18,3 +18,7 @@ h1 {
 .box {
   text-align: center;
 }
+
+.d-none{
+  display: none;
+}

@@ -16,3 +16,4 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 - noView rimuove i numeri dalla pagina dopo 5s;
 - i numeri inseriti nell'input vengono salvati in numberUser col click del bottone;
 - vengono verificati e stampati fuori quelli corretti;
+- bottone start genera i numeri e il countdown;
