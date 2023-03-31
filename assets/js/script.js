@@ -23,6 +23,7 @@ const output = document.querySelector('h1');
 //******************************************************************** Dati ***
 let numberRandom = [];
 let numberUser = [];
+let numberVerify = [];
 let time = 5;
 
 start.addEventListener('click', play);
@@ -79,13 +80,17 @@ function verify() {
   if (numberUser.length === 5) {
     for (let i = 0; i < 5; i++) {
       if (numberRandom.includes(numberUser[i])) {
-        box.classList.add('d-none');
-        repeat.classList.remove('d-none');
-        output.innerHTML += numberUser[i] + ', '; 
+        numberVerify.push(numberUser[i]);
       }
     }
   }
 }
+
+// box.classList.add('d-none');
+// repeat.classList.remove('d-none');
+// const message = `Hai indovinato ${numberVerify.length} numeri!`;
+// output.innerHTML = message;
+// output.innerHTML += numberUser[i] + ', '; 
 
 
 
