@@ -25,7 +25,6 @@ let numberRandom = [];
 let numberUser = [];
 let numberVerify = [];
 let time = 5; 
-let message;
 
 start.addEventListener('click', play);
 invia.addEventListener('click', insertNumber);
@@ -79,8 +78,7 @@ function insertNumber() {
     if (!numberUser.includes(parseInt(input.value))) {
     numberUser.push(parseInt(input.value));
   } else {
-    message = 'Numero già digitato!'
-    output.innerHTML = message;
+    output.innerHTML = 'Numero già digitato!';
   }
   input.value = '';
   verify(); 
@@ -101,6 +99,7 @@ function verify() {
 function end() {
   box.classList.add('d-none');
   repeat.classList.remove('d-none');  
+  let message;
   switch (numberVerify.length) {
     case 5:
       message = `

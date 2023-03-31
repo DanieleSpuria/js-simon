@@ -5,17 +5,23 @@
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
+  height: 100vh;
   text-align: center;
   line-height: 50px;
 }
 
 h1 {
   margin: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .box {
