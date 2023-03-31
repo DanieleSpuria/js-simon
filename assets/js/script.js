@@ -1,15 +1,15 @@
-/***************************************************************** Sviluppo ***
-- input, bottone, h1, due array vuoti;
-- numeri random unici e salvarli in un array;
-- timer di 5s;
-- far sparire i numeri;
-- salvare i numeri inseriti tramite input nell'altro array;
-- confrontare i due array e stampare i numeri uguali;
-******************************************************************************/
+/*********************************************** Sviluppo ****
+* - input, bottone, h1, due array vuoti;                     *
+* - numeri random unici e salvarli in un array;              *
+* - timer di 5s;                                             *
+* - far sparire i numeri;                                    *
+* - salvare i numeri inseriti tramite input nell'altro array;*
+* - confrontare i due array e stampare i numeri uguali;      *
+*************************************************************/
 
 
-//******************************************************************** Html ***  
-const start = document.getElementById('start');
+//*************************************************** Html ***  
+const start = document.getElementById('start');              
 const repeat = document.getElementById('repeat');
       repeat.className = 'd-none';
 const box = document.getElementsByClassName('box')[0];
@@ -20,7 +20,7 @@ const output = document.querySelector('h1');
 
 
 
-//******************************************************************** Dati ***
+//*************************************************** Dati ***
 let numberRandom = [];
 let numberUser = [];
 let numberVerify = [];
@@ -32,7 +32,7 @@ repeat.addEventListener('click', play)
 
 
 
-//**************************************************************** Funzioni ***
+//*********************************************** Funzioni ***
 function play() {
   start.classList.add('d-none');
   repeat.classList.add('d-none');
@@ -50,6 +50,7 @@ function random(min, max) {
       i++
     }
   }
+  console.log('random',numberRandom); //<---------------------------------------------------------------------------
 }
 
 function view() {
@@ -85,6 +86,7 @@ function verify() {
         numberVerify.push(numberUser[i]);
       }
     }
+    console.log('verify',numberVerify, 'length', numberVerify.length);//<-------------------------------------------
     end();
   }
 }
@@ -92,10 +94,23 @@ function verify() {
 function end() {
   box.classList.add('d-none');
   repeat.classList.remove('d-none'); 
-  const message = `
-  Hai indovinato ${numberVerify.length} numeri! <br>
-  ${numberVerify}
-  `;
+  let message; 
+    if (numberVerify.length === 5) {
+    message = `
+    Ottimo! Hai ricordato tutti i ${numberVerify.length} numeri! <br>
+    ${numberVerify}
+    `;
+  } else if (numberVerify.length === 0) {
+    message = `
+    Non hai ricordato neanche un numero! <br>
+    Meglio l'ippica!
+    `;
+  } else {
+    message = `
+    Hai ricordato ${numberVerify.length} numeri! <br>
+    ${numberVerify}
+    `;
+  }
   output.innerHTML = message;
 }
 
