@@ -13,3 +13,4 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 - inserita in funzione random che genera numeri unici e li pusha nell'array nunmberRandom;
 - stampo in pagina i numeri con view;
 - timer e time;
+- noView rimuove i numeri dalla pagina dopo 5s;

@@ -25,6 +25,7 @@ view();
 
 
 
+
 //**************************************************************** Funzioni ***
 function random(min, max) {
   let i = 0;
@@ -40,10 +41,24 @@ function random(min, max) {
 
 function view() {
   output.innerHTML = numberRandom;
+  console.log(time);
+  noView();
 }
 
-const timer = setInterval(function() {
-  time--
-}, 1000)
+function noView() {
+  const timer = setInterval(function() {
+    time--
+    console.log(time);
+
+    if (time === 0) {
+      output.innerHTML = '';
+      clearInterval(timer)
+    }
+  }, 1000);
+
+
+}
+
+
 
 
