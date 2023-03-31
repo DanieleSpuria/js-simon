@@ -9,3 +9,4 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 ## Sviluppo  
 - Aggiunti input, bottone e h1;
 - aggiunti due array vuoti;
+- creata funzione random
