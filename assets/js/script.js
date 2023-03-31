@@ -19,7 +19,21 @@ const output = document.querySelector('h1');
 let numberRandom = [];
 let numberUser = [];
 
+random(1,100);
+console.log(numberRandom);
 
 
 //**************************************************************** Funzioni ***
-const random = (max, min) => Math.floor(Math.random() * (max - min + 1) + min);
+function random(min, max) {
+  let i = 0;
+  while ( i < 5) {
+    let randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+    let nmb = randomNumber(min, max);
+    if (!numberRandom.includes(nmb)) {
+      numberRandom.push(nmb);
+      i++
+    }
+  }
+}
+
+
