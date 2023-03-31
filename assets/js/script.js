@@ -20,7 +20,8 @@ let numberRandom = [];
 let numberUser = [];
 
 random(1,100);
-console.log(numberRandom);
+view();
+
 
 
 //**************************************************************** Funzioni ***
@@ -34,6 +35,10 @@ function random(min, max) {
       i++
     }
   }
+}
+
+function view() {
+  output.innerHTML = numberRandom;
 }
 
 

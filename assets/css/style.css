@@ -10,3 +10,11 @@ main {
   align-items: center;
   height: 50vh;
 }
+
+h1 {
+  margin: 10px;
+}
+
+.box {
+  text-align: center;
+}
