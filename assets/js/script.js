@@ -75,11 +75,18 @@ function noView() {
 
 function insertNumber() {
   output.innerHTML = '';
-    if (!numberUser.includes(parseInt(input.value))) {
-    numberUser.push(parseInt(input.value));
-  } else {
-    output.innerHTML = 'Numero già digitato!';
-  }
+  switch ((!isNaN(input.value))) {
+    case true:
+        if (!numberUser.includes(parseInt(input.value))) {
+        numberUser.push(parseInt(input.value));
+      } else {
+        output.innerHTML = 'Numero già digitato!';
+      }
+      break;
+
+    case false:
+      output.innerHTML = 'Non è un numero!';
+  } 
   input.value = '';
   verify(); 
 }
@@ -91,7 +98,7 @@ function verify() {
         numberVerify.push(numberUser[i]);
       } 
     }
-    console.log('verify',numberVerify, 'length', numberVerify.length);//<-------------------------------------------
+    console.log('verify',numberVerify);//<--------------------------------------------------------------------------
     end();
   }
 }

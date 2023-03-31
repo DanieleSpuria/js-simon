@@ -21,3 +21,4 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 - end restituisce risultato;
 - reset per pulire il repeat;
 - insertNumber controlla che non sia stato ridigitato lo stesso numero;
+- insertNumber controlla che sia stato inserito un numero;
