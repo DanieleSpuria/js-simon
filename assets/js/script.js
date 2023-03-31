@@ -10,6 +10,8 @@
 
 //******************************************************************** Html ***  
 const start = document.getElementById('start');
+const repeat = document.getElementById('repeat');
+      repeat.className = 'd-none';
 const box = document.getElementsByClassName('box')[0];
       box.className = 'd-none';
 const input = document.querySelector('input');
@@ -28,12 +30,10 @@ invia.addEventListener('click', insertNumber);
 
 
 
-
-
 //**************************************************************** Funzioni ***
 function play() {
   start.classList.add('d-none');
-  box.classList.remove('d-none');
+  input.value = '';
   view();
 }
 
@@ -63,6 +63,7 @@ function noView() {
 
     if (time === 0) {
       output.innerHTML = '';
+      box.classList.remove('d-none');
       clearInterval(timer)
     }
   }, 1000);
@@ -70,6 +71,7 @@ function noView() {
 
 function insertNumber() {
   numberUser.push(parseInt(input.value));
+  input.value = '';
   verify(); 
 }
 
@@ -77,6 +79,8 @@ function verify() {
   if (numberUser.length === 5) {
     for (let i = 0; i < 5; i++) {
       if (numberRandom.includes(numberUser[i])) {
+        box.classList.add('d-none');
+        repeat.classList.remove('d-none');
         output.innerHTML += numberUser[i] + ', '; 
       }
     }
