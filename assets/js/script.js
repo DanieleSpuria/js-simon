@@ -42,7 +42,7 @@ function view() {
   output.innerHTML = numberRandom;
 }
 
-const clock = setInterval(function() {
+const timer = setInterval(function() {
   time--
 }, 1000)
 
