@@ -22,6 +22,8 @@ let time = 5;
 
 random(1,100);
 view();
+btn.addEventListener('click', insertNumber);
+
 
 
 
@@ -55,8 +57,11 @@ function noView() {
       clearInterval(timer)
     }
   }, 1000);
+}
 
-
+function insertNumber() {
+  numberUser.push(parseInt(input.value));
+  console.log(numberUser);
 }
 
 
