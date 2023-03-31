@@ -122,6 +122,13 @@ function end() {
       `;
       break;
   
+    case 1:
+      message = `
+      Hai ricordato ${numberVerify.length} numero! <br>
+      ${numberVerify}
+      `;
+      break;
+  
     default:
       message = `
       Hai ricordato ${numberVerify.length} numeri! <br>
