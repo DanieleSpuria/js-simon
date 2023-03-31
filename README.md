@@ -14,4 +14,5 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 - stampo in pagina i numeri con view;
 - timer e time;
 - noView rimuove i numeri dalla pagina dopo 5s;
-- i numeri inseriti nell'input vengono salvati in numberUser col click del bottone
+- i numeri inseriti nell'input vengono salvati in numberUser col click del bottone;
+- vengono verificati e stampati fuori quelli corretti;

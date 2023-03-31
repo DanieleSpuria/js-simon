@@ -60,8 +60,18 @@ function noView() {
 }
 
 function insertNumber() {
-  numberUser.push(parseInt(input.value));
-  console.log(numberUser);
+    numberUser.push(parseInt(input.value));
+    verify(); 
+}
+
+function verify() {
+  if (numberUser.length === 5) {
+    for (let i = 0; i < 5; i++) {
+      if (numberRandom.includes(numberUser[i])) {
+        output.innerHTML += numberUser[i] + ', '; 
+      }
+    }
+  }
 }
 
 
