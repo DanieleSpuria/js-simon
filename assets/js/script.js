@@ -54,7 +54,7 @@ function random(min, max) {
 }
 
 function view() {
-  random(1,100);
+  random(0,100);
   output.innerHTML = numberRandom;
   console.log(time);
   noView();
