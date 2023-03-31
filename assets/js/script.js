@@ -18,6 +18,7 @@ const output = document.querySelector('h1');
 //******************************************************************** Dati ***
 let numberRandom = [];
 let numberUser = [];
+let time = 5;
 
 random(1,100);
 view();
@@ -40,5 +41,9 @@ function random(min, max) {
 function view() {
   output.innerHTML = numberRandom;
 }
+
+const clock = setInterval(function() {
+  time--
+}, 1000)
 
 
