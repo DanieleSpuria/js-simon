@@ -24,17 +24,19 @@ const output = document.querySelector('h1');
 let numberRandom = [];
 let numberUser = [];
 let numberVerify = [];
-let time = 5;
+let time = 5; 
 
 start.addEventListener('click', play);
 invia.addEventListener('click', insertNumber);
+repeat.addEventListener('click', play)
 
 
 
 //**************************************************************** Funzioni ***
 function play() {
   start.classList.add('d-none');
-  input.value = '';
+  repeat.classList.add('d-none');
+  reset();
   view();
 }
 
@@ -95,6 +97,14 @@ function end() {
   ${numberVerify}
   `;
   output.innerHTML = message;
+}
+
+function reset() {
+  input.value = '';
+  time = 5;
+  numberRandom = [];
+  numberUser = [];
+  numberVerify = [];
 }
 
 
